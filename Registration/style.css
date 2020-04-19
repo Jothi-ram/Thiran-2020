@@ -1,0 +1,66 @@
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #E09724;
+  background-color: #220228;
+}
+
+h1 {
+  font: 700 5rem Montserrat, sans-serif;
+  letter-spacing: -0.07ex;
+  -webkit-animation: anim 1.5s infinite alternate ease-in-out;
+          animation: anim 1.5s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes anim {
+  from {
+    text-shadow: 0 0 10px transparent;
+  }
+  to {
+    text-shadow: 0 28px 50px #E09724;
+  }
+}
+
+@keyframes anim {
+  from {
+    text-shadow: 0 0 10px transparent;
+  }
+  to {
+    text-shadow: 0 28px 50px #E09724;
+  }
+}
+
+
+
+@media only screen and (max-width: 980px) {
+  #txt{
+    height:10vh;
+    font-size: 1vh;
+    margin-left: 30%;
+    
+    
+  }
+	
+}
+
+@media only screen and (max-width: 580px) {
+  #txt{
+    font-size: 3vh;
+  
+  }
+	
+}
+
+@media only screen and (max-width: 400px) {
+  #txt{
+    font-size:3vh;
+  
+  }
+  
+}

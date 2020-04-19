@@ -1,0 +1,96 @@
+/*team*/
+.team{
+    margin-top: var(--main-margin-top);
+    margin-bottom: var(--main-margin-bottom);
+    position: relative;
+}
+.team h2{
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #3b434c;
+  
+    
+}
+.team h2 span{
+    color: var(--main-color);
+}
+.team .p{
+    font-size: 16px;
+line-height: 30px;
+color: #3b434c;
+font-family: "Open Sans";
+font-weight: 400;
+text-align: center;
+}
+.team .ourteam{
+    margin: 30px 0;
+    transition: var(--mainTransition);
+}
+.team .card{
+    color: #cbcdcf;
+    box-shadow: none;
+    cursor: pointer;
+    transition: var(--mainTransition);
+  border:none;
+    
+}
+.team .card img{
+    filter: gray;
+    filter: grayscale(1);
+    border-radius: 10px;
+    transition: var(--mainTransition);
+}
+.team i{
+    margin: 5px;
+}
+.team .card .card-text{
+    color: #b2b4b9 !important;
+    padding: 5px 0 !important;
+}
+.team .card:hover img{
+    filter: none;
+    border-bottom: 5px solid #f7600e;
+    transform: scale(1.1);
+    transition: var(--mainTransition);
+
+}
+.team .card:hover .card-title{
+    color: #5f666d;
+}
+.team .card:hover .i1{
+    color: #3b5998;
+}
+.team .card:hover .i2{
+    color: #1da1f2;
+}
+.team .card:hover .i3{
+    color: #dd4b39;
+}
+.team .card:hover .card-text{
+    color: #84898e !important;
+}
+.tx{
+   color: #84898e !important; 
+}
+.team .motion .dot {
+    height: 20px;
+    width: 20px;
+    background-color: #DDD;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 3px;
+    cursor: pointer;
+
+}
+ .activecolor{
+    background-color: #f7600e !important;
+   
+}
+.colored{
+    filter: none;
+    filter: grayscale(0%);
+    border-bottom: 5px solid #f7600e;
+    transform: scale(1.1);
+    transition: var(--mainTransition);
+   
+}

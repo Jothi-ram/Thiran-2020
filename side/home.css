@@ -1,0 +1,46 @@
+
+.chat-box {
+  position: fixed;
+  right: 0;
+  top: 20vh;
+  box-shadow: 0 0 0.1em #000;
+  transition: 4s;
+}
+
+.chat-header {
+  width: 40px;
+  height: 250px;
+  background-color: #d8dbe2;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+.chat-content {
+  width: 0px;
+  height: 250px;
+  background: #ffffff;
+  color: black;
+  overflow-y: scroll !important;
+}
+
+.live-anchor {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.live-anchor:hover {
+  text-decoration: none;
+  color: #050e1f;
+}
+
+.hide {
+  display: none;
+}
+
+.vertical-text {
+  color: black;
+  white-space: nowrap;
+  margin-right: 10px;
+  transform: rotate(90deg);
+  transform-origin: top 0 left 30;
+}

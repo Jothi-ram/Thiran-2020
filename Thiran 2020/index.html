@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Thiran 2020</title>
+  
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./images/T.png">
+  <meta author="Sam"/>
+  <link rel="stylesheet" type="text/css" href="MainBg/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="MainBg/css/demo.css" />
+  <script>document.documentElement.className = 'js';</script>
+
+  <link rel="stylesheet" href="./loader/loaderstyle.css">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <link rel="stylesheet" href="./side/bootstrap.min.css"><!--Side Nav-->
+    <link rel="stylesheet" href="./side/main.css"><!--Side Nav-->
+
+	<link rel="stylesheet" href="./side/home.css"><!--Side Nav-->
+
+  
+  <link rel="stylesheet" type="text/css" href="./Menu/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="./Menu/css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="./Menu/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="./Menu/css/menu_bubble.css" />
+  <script src="./Menu/js/snap.svg-min.js"></script>
+
+
+
+
+    <!--logo-->
+
+    <style>
+
+        img
+        {
+          position:absolute;
+          width:68em;
+          height: 35em;
+          padding-left: 20em;
+          padding-right: 10px;
+          padding-top: 10em;
+         }
+          #parallax1{
+          position:fixed;
+          width: 100%;
+          height: 100%;
+        }
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) 
+        {
+        #big
+        {
+            width: 300px;
+            height: 300px;
+            margin-top: 65px;
+            padding-left: 40px;
+            padding-right: 10px;
+        }
+        canvas{width: 100%;height: 100%;}
+        }
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
+        {
+        #big
+        {
+            width: 450px;
+            height: 200px;
+            margin-top: 350px;
+            padding-left: 50px;
+            padding-right: 10px;
+            
+        }
+        
+        canvas{width: 100%;height: 100%;}
+        }
+        .content-wrap::-webkit-scrollbar{
+            display: none;
+        }
+            </style>
+            </head>
+            
+<body  class="demo-3">
+    <!-- partial:index.partial.html -->
+
+    
+    
+    <canvas id="sakura"></canvas>
+    <div class="btnbg">
+                
+                
+                          <div id="parallax1">
+                            <div class="layer" data-depth="0.8"></div>
+                            <div class="layer" data-depth="1.3"></div>
+                            <div class="layer" data-depth="1.8">   
+        
+                                  <div class="title">
+                                
+                                      <img id="big" src="images/ThiranLogo.png">
+        
+                                  </div>
+                            </div>
+        
+                          </div>    
+                           <script src='MainBg/js/parallax.min.js'></script>       
+                          <script  src="MainBg/js/parallax.js"></script>
+
+
+            <div class="container">
+                <div class="menu-wrap">
+                    <nav class="menu">
+                        <div class="icon-list">
+
+                            <a href="./Event.html"><i class="fa fa-fw fa-star-o"></i><span>EVENTS</span></a>
+                            <a href="schedule.html"><i class="fa fa-fw fa-calendar"></i><span>SCHEDULE</span></a>
+                            <a href="./About.html"><i class="fa fa-fw fa-info"></i><span>ABOUT</span></a>
+                            <a href="./Reg.html"><i class="fa fa-fw fa-sign-in"></i><span>REGISTER</span></a>
+                            <a href="./Team.html"><i class="fa fa-fw fa-users"></i><span>TEAM</span></a>
+                        </div>
+                    </nav>
+                    <button class="close-button" id="close-button">Close Menu</button>
+                    <div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="700%" viewBox="0 0 100 800" preserveAspectRatio="none">
+                            <path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+                        </svg>
+                    </div>
+                </div>
+                <button class="menu-button" id="open-button">Open Menu</button>
+                <div class="content-wrap">
+                    <div class="content">
+                        <!-- Related demos -->
+                        
+                    </div>
+                </div><!-- /content-wrap -->
+            </div><!-- /container -->
+            <script src="./Menu/js/classie.js"></script>
+            <script src="./Menu/js/main4.js"></script>
+            
+            
+
+        
+                <script src="MainBg/js/demo.js"></script>
+                <script src="MainBg/js/easings.js"></script>
+                <script src="MainBg/js/demo3.js"></script> 
+
+
+</div>
+
+<!-- sakura shader -->
+<script id="sakura_point_vsh" type="x-shader/x_vertex">
+uniform mat4 uProjection;
+uniform mat4 uModelview;
+uniform vec3 uResolution;
+uniform vec3 uOffset;
+uniform vec3 uDOF;  //x:focus distance, y:focus radius, z:max radius
+uniform vec3 uFade; //x:start distance, y:half distance, z:near fade start
+
+attribute vec3 aPosition;
+attribute vec3 aEuler;
+attribute vec2 aMisc; //x:size, y:fade
+
+varying vec3 pposition;
+varying float psize;
+varying float palpha;
+varying float pdist;
+
+//varying mat3 rotMat;
+varying vec3 normX;
+varying vec3 normY;
+varying vec3 normZ;
+varying vec3 normal;
+
+varying float diffuse;
+varying float specular;
+varying float rstop;
+varying float distancefade;
+
+void main(void) {
+    // Projection is based on vertical angle
+    vec4 pos = uModelview * vec4(aPosition + uOffset, 1.0);
+    gl_Position = uProjection * pos;
+    gl_PointSize = aMisc.x * uProjection[1][1] / -pos.z * uResolution.y * 0.5;
+    
+    pposition = pos.xyz;
+    psize = aMisc.x;
+    pdist = length(pos.xyz);
+    palpha = smoothstep(0.0, 1.0, (pdist - 0.1) / uFade.z);
+    
+    vec3 elrsn = sin(aEuler);
+    vec3 elrcs = cos(aEuler);
+    mat3 rotx = mat3(
+        1.0, 0.0, 0.0,
+        0.0, elrcs.x, elrsn.x,
+        0.0, -elrsn.x, elrcs.x
+    );
+    mat3 roty = mat3(
+        elrcs.y, 0.0, -elrsn.y,
+        0.0, 1.0, 0.0,
+        elrsn.y, 0.0, elrcs.y
+    );
+    mat3 rotz = mat3(
+        elrcs.z, elrsn.z, 0.0, 
+        -elrsn.z, elrcs.z, 0.0,
+        0.0, 0.0, 1.0
+    );
+    mat3 rotmat = rotx * roty * rotz;
+    normal = rotmat[2];
+    
+    mat3 trrotm = mat3(
+        rotmat[0][0], rotmat[1][0], rotmat[2][0],
+        rotmat[0][1], rotmat[1][1], rotmat[2][1],
+        rotmat[0][2], rotmat[1][2], rotmat[2][2]
+    );
+    normX = trrotm[0];
+    normY = trrotm[1];
+    normZ = trrotm[2];
+    
+    const vec3 lit = vec3(0.6917144638660746, 0.6917144638660746, -0.20751433915982237);
+    
+    float tmpdfs = dot(lit, normal);
+    if(tmpdfs < 0.0) {
+        normal = -normal;
+        tmpdfs = dot(lit, normal);
+    }
+    diffuse = 0.4 + tmpdfs;
+    
+    vec3 eyev = normalize(-pos.xyz);
+    if(dot(eyev, normal) > 0.0) {
+        vec3 hv = normalize(eyev + lit);
+        specular = pow(max(dot(hv, normal), 0.0), 20.0);
+    }
+    else {
+        specular = 0.0;
+    }
+    
+    rstop = clamp((abs(pdist - uDOF.x) - uDOF.y) / uDOF.z, 0.0, 1.0);
+    rstop = pow(rstop, 0.5);
+    //-0.69315 = ln(0.5)
+    distancefade = min(1.0, exp((uFade.x - pdist) * 0.69315 / uFade.y));
+}
+</script>
+<script id="sakura_point_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+
+uniform vec3 uDOF;  //x:focus distance, y:focus radius, z:max radius
+uniform vec3 uFade; //x:start distance, y:half distance, z:near fade start
+
+const vec3 fadeCol = vec3(0.08, 0.03, 0.06);
+
+varying vec3 pposition;
+varying float psize;
+varying float palpha;
+varying float pdist;
+
+//varying mat3 rotMat;
+varying vec3 normX;
+varying vec3 normY;
+varying vec3 normZ;
+varying vec3 normal;
+
+varying float diffuse;
+varying float specular;
+varying float rstop;
+varying float distancefade;
+
+float ellipse(vec2 p, vec2 o, vec2 r) {
+    vec2 lp = (p - o) / r;
+    return length(lp) - 1.0;
+}
+
+void main(void) {
+    vec3 p = vec3(gl_PointCoord - vec2(0.5, 0.5), 0.0) * 2.0;
+    vec3 d = vec3(0.0, 0.0, -1.0);
+    float nd = normZ.z; //dot(-normZ, d);
+    if(abs(nd) < 0.0001) discard;
+    
+    float np = dot(normZ, p);
+    vec3 tp = p + d * np / nd;
+    vec2 coord = vec2(dot(normX, tp), dot(normY, tp));
+    
+    //angle = 15 degree
+    const float flwrsn = 0.258819045102521;
+    const float flwrcs = 0.965925826289068;
+    mat2 flwrm = mat2(flwrcs, -flwrsn, flwrsn, flwrcs);
+    vec2 flwrp = vec2(abs(coord.x), coord.y) * flwrm;
+    
+    float r;
+    if(flwrp.x < 0.0) {
+        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.3, vec2(0.36, 0.96) * 0.3);
+    }
+    else {
+        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.3, vec2(0.58, 0.96) * 0.3);
+    }
+    
+    if(r > rstop) discard;
+    
+    vec3 col = mix(vec3(1.0, 0.8, 0.75), vec3(1.0, 0.9, 2.87), r);
+    float grady = mix(0.0, 1.0, pow(coord.y * 0.5 + 0.5, 0.35));
+    col *= vec3(1.0, grady, grady);
+    col *= mix(0.8, 1.0, pow(abs(coord.x), 0.3));
+    col = col * diffuse + specular;
+    
+    col = mix(fadeCol, col, distancefade);
+    
+    float alpha = (rstop > 0.001)? (0.5 - r / (rstop * 2.0)) : 1.0;
+    alpha = smoothstep(0.0, 1.0, alpha) * palpha;
+    
+    gl_FragColor = vec4(col * 0.6, alpha); 
+}
+</script>
+<!-- effects -->
+<script id="fx_common_vsh" type="x-shader/x_vertex">
+uniform vec3 uResolution;
+attribute vec2 aPosition;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+    texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
+    screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
+}
+</script>
+<script id="bg_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+
+uniform vec2 uTimes;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    vec3 col;
+    float c;
+    vec2 tmpv = texCoord * vec2(0.0, 1.0) - vec2(0.95, 1.0);
+    c = exp(-pow(length(tmpv) * 5.8, 2.0));
+    col = mix(vec3(0.02, 0.0, 0.03), vec3(0.96, 0.98, 1.0) * 1.5, c);
+    gl_FragColor = vec4(col * 0.5, 1.0);
+}
+</script>
+<script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    vec4 col = texture2D(uSrc, texCoord);
+    gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
+}
+</script>
+<script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+uniform vec4 uBlurDir; //dir(x, y), stride(z, w)
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    vec4 col = texture2D(uSrc, texCoord);
+    col = col + texture2D(uSrc, texCoord + uBlurDir.xy * uDelta);
+    col = col + texture2D(uSrc, texCoord - uBlurDir.xy * uDelta);
+    col = col + texture2D(uSrc, texCoord + (uBlurDir.xy + uBlurDir.zw) * uDelta);
+    col = col + texture2D(uSrc, texCoord - (uBlurDir.xy + uBlurDir.zw) * uDelta);
+    gl_FragColor = col / 5.0;
+}
+</script>
+<!-- effect fragment shader template -->
+<script id="fx_common_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    gl_FragColor = texture2D(uSrc, texCoord);
+}
+</script>
+<!-- post processing -->
+<script id="pp_final_vsh" type="x-shader/x_vertex">
+uniform vec3 uResolution;
+attribute vec2 aPosition;
+varying vec2 texCoord;
+varying vec2 screenCoord;
+void main(void) {
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+    texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
+    screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
+}
+</script>
+<script id="pp_final_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform sampler2D uBloom;
+uniform vec2 uDelta;
+varying vec2 texCoord;
+varying vec2 screenCoord;
+void main(void) {
+    vec4 srccol = texture2D(uSrc, texCoord) * 2.0;
+    vec4 bloomcol = texture2D(uBloom, texCoord);
+    vec4 col;
+    col = srccol + bloomcol * (vec4(1.0) + srccol);
+    col *= smoothstep(1.0, 0.0, pow(length((texCoord - vec2(0.5)) * 2.0), 1.2) * 0.5);
+    col = pow(col, vec4(0.45454545454545)); //(1.0 / 2.2)
+    
+    gl_FragColor = vec4(col.rgb, 1.0);
+    gl_FragColor.a = 1.0;
+}
+</script>
+<!-- partial -->
+
+
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+
+  <script  src="./script.js"></script>
+
+  <script src="./rightclick.js"></script>
+
+  <script src="./loader/jquery-3.2.1.min.js"></script>
+  <script src="./loader/main.js"></script>
+
+
+
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5e628c518d24fc22658636e9/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+
+    
+
+    <div class="chat-box">
+        <div class="rows">
+          <div class="col-xs-2">
+            <div class="chat-header" style="background-color: #E09724;border-top-left-radius: 8px;border-bottom-left-radius: 8px;">
+              <p class="vertical-text pl-3 pt-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LIVE </b>&nbsp;<b>NEWS</b></p>
+            </div>
+          </div>
+          <div class="col-xs-10">
+            <div class="chat-content">
+              <div class="p-3 pr-4 event-text hide">
+                <p class="text-muted"></p>
+                <p class="text-body">&bull;<span style="color:#000;font-size: 20px;"><b>NetHunt</b></span> <b style="font-size: 20px;">will be live soon!</b><a target="_blank" href="#"></a></p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="./side/njquery.min.js"></script><!--Side Nav-->
+    <script src="./side/home.js"></script><!--Side Nav-->
+
+</body>
+</html>
